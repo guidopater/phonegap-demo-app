@@ -1,0 +1,39 @@
+.splash {
+   align: center;
+}
+
+.profilephoto {
+	width: 100px;
+	float:left;
+}
+
+#profile_main div  {
+	float:left;
+	margin-left:10px;
+}
+
+#profile_picture {
+	width:50px;
+}
+
+.clear {
+	clear: both;
+}
+
+.profilephoto_size_small {
+	width: 30px;
+}
+
+.notificationicon {
+    float:left;
+    width:16px;
+}
+
+.controlgroup-textinput {
+	float:left;
+}
+
+#message_window p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

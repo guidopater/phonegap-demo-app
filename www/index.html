@@ -1,41 +1,357 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en" manifest="./cache.manifest">
+<head>
+	<meta charset="utf-8" />
+	<title>Social Business App - Prototype</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<!-- viewport -->
+	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<!-- webapp -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="./css/application.css" />
+	<link rel="stylesheet" href="./css/jquery.mobile-1.4.3.min.css" />
+	<link rel="stylesheet" href="./css/speechbubbles.css" />
 
-    http://www.apache.org/licenses/LICENSE-2.0
+        <link href="./res/icon/ios/icon-57.png" rel="apple-touch-icon" />
+        <link href="./res/icon/ios/icon-57.png" rel="apple-touch-icon" sizes="57x57" />
+        <link href="./res/icon/ios/icon-72.png" rel="apple-touch-icon" sizes="72x72" />
+        <link href="./res/icon/ios/icon-57-2x.png" rel="apple-touch-icon" sizes="114x114" />        
+        <link href="./res/icon/ios/icon-72-2x.png" rel="apple-touch-icon" sizes="144x144" />        
+        
+	<script src="./js/jquery-2.1.1.min.js"></script>
+	<script src="./js/application.js"></script>
+	<script src="./js/jquery.mobile-1.4.3.min.js"></script>
+	<!--script src="phonegap.js"></script-->
+</head>
+	<body>
+                <div data-role="page" id="accounts">
+                    <div data-role="panel" id="menu-accounts">
+                        <a data-role="button" data-icon="home" href="#people" data-rel="close">Startpage</a>
+                        <a data-role="button" data-icon="bullets" href="#accounts" data-rel="close">Accounts</a>
+                        <a data-role="button" data-icon="user" href="#profile">My profile</a>
+                        <a data-role="button" data-icon="gear" href="#settings">Settings</a>
+                        <a data-role="button" data-icon="gear" href="#">Help</a>
+                        <a data-role="button" data-icon="info" href="#">About</a>
+                        <a data-role="button" data-icon="power" href="#">Quit</a>                            
+                    </div>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+                    <header data-role="header" data-position="fixed">
+                        <a href="#menu-accounts" data-icon="bars" data-iconpos="notext"></a>
+                        <h1>Accounts</h1>
+                        <a href="#addaccount" data-icon="plus" data-iconpos="notext" class="ui-btn-right">Add account</a>
+                    </header>
+
+			<article data-role="content">
+				<ul data-role="listview">
+					<li><a href="#timelines">Wij van</p></a></li>
+					<li><a href="#timelines">ReinierNet</p></a></li>
+					<li><a href="#timelines">KLM iShare</p></a></li>
+					<li><a href="#timelines">Andere Handen</p></a></li>
+				</ul>
+			</article>
+		</div><!-- Page Accounts -->
+
+		<div data-role="page" id="timelines">
+                    <div data-role="panel" id="menu-timelines">
+                        <a data-role="button" data-icon="home" href="#people" data-rel="close">Startpage</a>
+                        <a data-role="button" data-icon="bullets" href="#accounts" data-rel="close">Accounts</a>
+                        <a data-role="button" data-icon="user" href="#profile">My profile</a>
+                        <a data-role="button" data-icon="gear" href="#settings">Settings</a>
+                        <a data-role="button" data-icon="gear" href="#">Help</a>
+                        <a data-role="button" data-icon="info" href="#">About</a>
+                        <a data-role="button" data-icon="power" href="#">Quit</a>                            
+                    </div>
+                    
+			<header data-role="header" data-position="fixed">
+                            <a href="#menu-timelines" data-icon="bars" data-iconpos="notext"></a>
+                            <h1>Timelines</h1>
+                            <a href="#newmessage" data-icon="edit" data-iconpos="notext" class="ui-btn-right">New message</a>
+			</header>
+
+			<article data-role="content">
+				<center><h1>Coming soon...</h1></center>
+			</article>
+                    
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#timelines" data-icon="bullets">Timelines</a></li>
+						<li><a href="#notifications" data-icon="alert">Notifications</a></li>
+						<li><a href="#messages" data-icon="mail">Messages</a></li>
+						<li><a href="#people" data-icon="user">People</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div><!-- Page Timelines -->
+
+		<div data-role="page" id="people">
+                    <div data-role="panel" id="menu-people">
+                        <a data-role="button" data-icon="home" href="#people" data-rel="close">Startpage</a>
+                        <a data-role="button" data-icon="bullets" href="#accounts" data-rel="close">Accounts</a>
+                        <a data-role="button" data-icon="user" href="#profile">My profile</a>
+                        <a data-role="button" data-icon="gear" href="#settings">Settings</a>
+                        <a data-role="button" data-icon="gear" href="#">Help</a>
+                        <a data-role="button" data-icon="info" href="#">About</a>
+                        <a data-role="button" data-icon="power" href="#">Quit</a>                            
+                    </div>
+                    
+                    <header data-role="header" data-position="fixed">
+                        <a href="#menu-people" data-icon="bars" data-iconpos="notext"></a>
+                        <h1>People</h1>
+                    </header>
+
+			<article data-role="content">
+				<ul data-role="listview"  data-filter="true">
+					<li>
+						<a href="#profile">
+							<img class="profilephoto" src="./img/profiles/guido.jpg" alt="Guido Pater" />
+							<h1>Guido Pater</h1>
+							<p>Elke week beter...</p>
+							<p>Online business consultant bij PMtD met als specialisatie online communities & sociaal intranet. Momenteel projectmanager intranet bij Reinier de Graaf. Daarnaast heb ik interesse in mijn medemens, films, piano spelen & technische snufjes.</p>
+						</a>
+					</li>
+					<li>
+						<a href="#profile">
+							<img class="profilephoto"  src="./img/profiles/thom.jpg" alt="Thom Eijken" />
+							<h1>Thom Eijken</h1>
+							<p>Amsterdam Area, Netherlands</p>
+							<p>Consultant at KPMG Risk Consulting | Making the wold a more righteous place, one innovation at a time</p>
+						</a>
+					</li>
+					<li>
+						<a href="#profile">
+							<img class="profilephoto"  src="./img/profiles/rene.jpg" alt="Thom Eijken" />
+							<h1>Rene</h1>
+							<p>"Be the change you want to see"</p>
+							<p>Gepassioneerd en veelgevraagd spreker over leniger organiseren, het nieuwe kennisdelen en samenwerken. Directeur Winkwaves en gepromoveerd internetstrateeg. Kleinkunst, reizen, Chileense wijn, Franse kaas, Japanse Tempura.</p>
+						</a>
+					</li>
+				</ul>
+			</article>
+
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#timelines" data-icon="bullets">Timelines</a></li>
+						<li><a href="#notifications" data-icon="alert">Notifications</a></li>
+						<li><a href="#messages" data-icon="mail">Messages</a></li>
+						<li><a href="#people" data-icon="user">People</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div><!-- Page People -->
+
+		<div data-role="page" id="messages">
+                    <div data-role="panel" id="menu-messages">
+                        <a data-role="button" data-icon="home" href="#people" data-rel="close">Startpage</a>
+                        <a data-role="button" data-icon="bullets" href="#accounts" data-rel="close">Accounts</a>
+                        <a data-role="button" data-icon="user" href="#profile">My profile</a>
+                        <a data-role="button" data-icon="gear" href="#settings">Settings</a>
+                        <a data-role="button" data-icon="gear" href="#">Help</a>
+                        <a data-role="button" data-icon="info" href="#">About</a>
+                        <a data-role="button" data-icon="power" href="#">Quit</a>                            
+                    </div>
+                    
+			<header data-role="header" data-position="fixed">
+                            <a href="#menu-messages" data-icon="bars" data-iconpos="notext"></a>
+                            <h1>Messages</h1>
+                            <a href="#newmessage" data-icon="edit" data-iconpos="notext" class="ui-btn-right">New message</a>
+			</header>
+
+
+			<article data-role="content">
+				<ul data-role="listview"  data-filter="true" class="touch" data-icon="false" data-split-icon="delete">
+					<li>
+						<a href="#conversation">
+							<img class="profilephoto" src="./img/profiles/thom.jpg" alt="Thom Eijken" />
+							<h1>Thom Eijken</h1>
+							<p><span class="ui-icon-back" />Replied: Goed bezig, btw!</p>
+						</a>
+					</li>
+					<li>
+						<a href="#conversation">
+							<img class="profilephoto"  src="./img/profiles/rene.jpg" alt="Rene" />
+							<h1>Rene</h1>
+							<p>Replied: Wil je deze groep trouwens redactioneel of besloten hebben? Mij om het even namelijk ;)</p>
+						</a>
+					</li>
+					<li>
+						<a href="#conversation">
+							<img class="profilephoto"  src="./img/profiles/charlotte.png" alt="Charlotte" />
+							<h1>Charlotte</h1>
+							<p>Hai Guido, goed dat je de bijdrage over de unieke namen hebt geplaatst, ik zal het onder de aandacht brengen intern :) Heb je inmiddels al meer informatie over de profielen indeling? Groet, Charlotte</p>
+						</a>
+					</li>
+				</ul>
+			</article>
+
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#timelines" data-icon="bullets">Timelines</a></li>
+						<li><a href="#notifications" data-icon="alert">Notifications</a></li>
+						<li><a href="#messages" data-icon="mail">Messages</a></li>
+						<li><a href="#people" data-icon="user">People</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div><!-- Page Messages -->
+
+		<div data-role="page" id="notifications">
+                    <div data-role="panel" id="menu-notifications">
+                        <a data-role="button" data-icon="home" href="#people" data-rel="close">Startpage</a>
+                        <a data-role="button" data-icon="bullets" href="#accounts" data-rel="close">Accounts</a>
+                        <a data-role="button" data-icon="user" href="#profile">My profile</a>
+                        <a data-role="button" data-icon="gear" href="#settings">Settings</a>
+                        <a data-role="button" data-icon="gear" href="#">Help</a>
+                        <a data-role="button" data-icon="info" href="#">About</a>
+                        <a data-role="button" data-icon="power" href="#">Quit</a>                            
+                    </div>
+                    
+			<header data-role="header" data-position="fixed">
+                            <a href="#menu-notifications" data-icon="bars" data-iconpos="notext"></a>
+                            <h1>Notifications</h1>
+			</header>
+                    
+                        <article data-role="content">
+                            <ul data-role="listview"  data-filter="true" class="touch" data-icon="false" data-split-icon="delete">
+                                <li>
+                                        <a href="#">
+                                                <img class="profilephoto"  src="./img/profiles/hans.jpg" alt="Hans" />    
+                                                <img class="notificationicon" src="./img/icons/tip.png" alt="Tip" />
+                                                <p>Nieuwe tip van Hans over Onderhoud aan onze diensten zaterdag a.s. (9 aug) aan Het nachtcafé</p>
+                                                <p>Aanstaande zaterdag zullen onze diensten in de ochtend enige tijd niet beschikbaar zijn in verband met onderhoud.</p>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#">
+                                                <img class="profilephoto"  src="./img/profiles/mark.jpg" alt="Mark" />    
+                                                <img class="notificationicon" src="./img/icons/tip.png" alt="Tip" />
+                                                <p>Nieuwe tip van Mark over Kennisbacchanaal herfst 2014 aan Het nachtcafé</p>
+                                                <p>De datum voor het volgende kennisbacchanaal is bekend: 7 oktober. Hopelijk kun je erbij zijn. Hartelijke groet, Mark</p>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#">
+                                                <img class="profilephoto"  src="./img/profiles/thom.jpg" alt="Thom Eijken" />    
+                                                <img class="notificationicon" src="./img/icons/reply.png" alt="Marien" />
+                                                <p>Nieuwe reactie van Thom Eijken voor Release-updates Harmonics</p>
+                                                <p>Yes! :)</p>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#">
+                                                <img class="profilephoto"  src="./img/profiles/rene.jpg" alt="Rene Jansen" />    
+                                                <img class="notificationicon" src="./img/icons/reply.png" alt="Tip" />
+                                                <p>Nieuwe reactie door Rene Jansen voor Release-updates Harmonics</p>
+                                                <p>Prachtig</p>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#">
+                                                <img class="profilephoto"  src="./img/profiles/charlotte.png" alt="Charlotte" />    
+                                                <img class="notificationicon" src="./img/icons/modification.png" alt="Tip" />
+                                                <p>Aangepaste reactie door Charlotte voor Release-updates Harmonics</p>
+                                                <p>De aangepaste reactie: Helemaal eens met bovenstaande remarks. De oorspronkelijke reactie: Helemaal een met bovenstaande remarks.</p>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#">
+                                                <img class="profilephoto"  src="./img/profiles/hans.jpg" alt="Hans" />    
+                                                <img class="notificationicon" src="./img/icons/chat.png" alt="Tip" />
+                                                <p>Chat van Hans</p>
+                                                <p>Ik had Thom van de week al uitgenodigd. Ik heb de uitnodiging nu nog een keer herstuurd.</p>
+                                        </a>
+                                </li>
+                            </ul>                            
+                       </article>
+                    
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#timelines" data-icon="bullets">Timelines</a></li>
+						<li><a href="#notifications" data-icon="alert">Notifications</a></li>
+						<li><a href="#messages" data-icon="mail">Messages</a></li>
+						<li><a href="#people" data-icon="user">People</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div><!-- Page Notifications -->
+
+		<div data-role="page" id="profile">
+			<header data-role="header" data-position="fixed">
+				<a href="" data-icon="carat-l" data-iconpos="notext" data-rel="back">Back</a>
+				<h1>Profile</h1>
+			</header>
+
+			<article data-role="content">
+				<div id="profile_main">
+					<div><img src="./img/profiles/guido.jpg" id="profile_picture"></div>
+					<div id="profile_data">
+						<h1>Guido Pater</h1>
+						<p>Elke week beter...</p>
+						<p>06 16 15 48 18</p>
+						<p>Rotterdam</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div id="profile_actions">
+					<a href="#" class="ui-btn ui-btn-icon-left ui-icon-mail">Chat</a>
+					<a href="#" class="ui-btn ui-btn-icon-left ui-icon-mail">E-mail</a>
+					<a href="tel:+31616154818" class="ui-btn ui-btn-icon-left ui-icon-phone">Bellen</a>
+					<a href="#" class="ui-btn ui-btn-icon-left ui-icon-user">Opslaan in contacten</a>
+				</div>
+
+				<div id="profile_detail">
+					<h2>Profiel</h2>
+					<p>Online business consultant bij PMtD met als specialisatie online communities & sociaal intranet. Momenteel projectmanager intranet bij Reinier de Graaf. Daarnaast heb ik interesse in mijn medemens, films, piano spelen & technische snufjes.</p>
+
+					<h2>Ervaring</h2>
+					<p>ik ben online business consultant bij PMtD Online. Ik heb in diverse sectoren als projectmanager en adviseur een flink aantal online projecten begeleid. Hierbij was ik verantwoordelijk voor ontwikkelteams, aansturing van leveranciers en stakeholder begeleiding. Daardoor heb ik goed inzicht, begrip en kennis van het online speelveld, zowel vanuit business als IT. Ik wordt gezien als een ondernemende en creatieve denker met een pragmatische, zelfstandige aanpak. Door de combinatie van een technische achtergrond en goed kunnen luisteren kan ik het probleem van een klant snel analyseren en een oplossing formuleren. Ook weet ik, door jarenlange ervaring in het managen van projecten, deze oplossing vervolgens effici�nt en doelgericht te implementeren.<br/><br/>Ik heb Technische Informatica gestudeerd aan de Hogeschool van Utrecht en direct na mijn mijn studie een eigen onderneming opgezet, gespecialiseerd in webdevelopment. Naast het dagelijks bestuur van de onderneming vervulde ik de rollen van business analist, software architect en eindverantwoordelijke voor sales & marketing.</p>
+
+					<h2>Trefwoorden</h2>
+					<p>app, artikel, ballonnetje, bestanden, bijdrage, bijlage, design, durftevragen, dynamische, gebruikersnaam, groepen, harmonics, kronkel, navigatie, notificatie, profiel, responsive, stelling, widget, zoeken</p>
+				</div>
+
+			</article>
+
+			<footer data-role="footer" data-position="fixed">
+			</footer>
+		</div><!-- Page Profile -->
+
+		<div data-role="page" id="conversation">
+			<header data-role="header" data-position="fixed">
+				<a href="" data-icon="carat-l" data-iconpos="notext" data-rel="back">Back</a>
+				<h1>Thom Eijken</h1>
+				<img src="./img/profiles/thom.jpg" class="ui-btn-right ui-corner-all profilephoto_size_small" />
+			</header>
+
+			<article data-role="content">
+				<div id="message_window">
+					<p class="speech_incoming">Hey Guido...</p>
+					<div class="clear" />
+					<p class="speech_outgoing">Hoi Thom, hoe gaat het met je?</p>
+					<div class="clear" />
+					<p class="speech_incoming">Ja goed! Ben lekker bezig geweest met wat uitzoekwerk en heb een voorbeeld neergezet op de bekende plaats, zou jij eens willen kijken?</p>
+					<div class="clear" />
+					<p class="speech_incoming">Zojuist nog een update gedaan, zou nu helemaal in orde moeten zijn.</p>
+					<div class="clear" />
+					<p class="speech_outgoing">Helemaal goed, ik check het dit weekend, zit nu in een meeting namelijk en verder nog een drukke dag voor de boeg!</p>
+					<div class="clear" />
+					<p class="speech_incoming">Ik hoor het wel...</p>
+					<div class="clear" />
+					<p class="speech_outgoing">Zo eindelijk even tijd gehad om te kijken, ziet er goed uit. Ik heb wat opmerkingen geplaatst.</p>
+					<div class="clear" />
+					<p class="speech_outgoing">Goed bezig, btw!</p>
+					<div class="clear" />
+				</div>
+			</article>
+			<footer data-role="footer" data-position="fixed">
+				<input type="text" id="new-message" data-mini="true">
+				<a href="#" class="ui-btn ui-btn-icon-left ui-icon-mail" data-mini="true" >Send</a>
+			</footer>
+		</div><!-- Page Conversation -->
+	</body>
 </html>
