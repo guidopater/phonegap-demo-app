@@ -2,38 +2,31 @@ $(function() {
   /*setTimeout(hideSplash, 3000);*/
 });
 
-function hideSplash() {
-  $.mobile.changePage("#accounts", "fade");
-}
-
 function saveContact() {
-    alert("save contact");
-
-    // search contact on name or new
     var options = new ContactFindOptions();
-    options.filter = "Guido Pater";
+    options.filter = "Guido Pater";  //just it's an example. Looking for id 20.
     var fields = ["displayName", "name"];
-    navigator.contacts.find(fields, onContactSearchSucces, onContactSearchError, options);
-}
+    var contact;   
+    navigator.contacts.find(fields, function(contacts) {
+        var tContactName = new ContactName();
+        tContactName.givenName = 'Guido';
+        tContactName.lastName = 'Pater';
 
-    function onDeviceReady() {
-        // find all contacts with 'Bob' in any name field
-        var options = new ContactFindOptions();
-        options.filter="Bob"; 
-        var fields = ["displayName", "name"];
-        navigator.contacts.find(fields, onSuccess, onError, options);
-    }
-
-    // onSuccess: Get a snapshot of the current contacts
-    //
-    function onSuccess(contacts) {
-        for (var i=0; i<contacts.length; i++) {
-            console.log("Display Name = " + contacts[i].displayName);
+        if (contacts.length == 0)  {
+            contact = navigator.contacts.create();
+            contact.note = "Added by PhoneGap Demo App";    
+        } else {
+            contact = contacts[0];
         }
-    }
 
-    // onError: Failed to get the contacts
-    //
-    function onError(contactError) {
-        alert('onError!');
-    }
+        contact.name = tContactName;    
+        contact.phoneNumbers[0] = new ContactField('work', '+31616154818',true);
+        contact.save(function(contact) {
+            navigator.notification.alert('Saved sucessfully!!!',function(){},'Title');
+        }, function(contactError) {
+            navigator.notification.alert('Error contact save: '+contactError.code,function(){},'Title');
+        });
+    }, function(contactError) {
+       navigator.notification.alert('Error contact find: '+contactError.code,function(){},'Title');
+    }, options);
+}
